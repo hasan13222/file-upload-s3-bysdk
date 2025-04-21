@@ -1,7 +1,7 @@
 name: Ready the code and deploy
 on: [push, workflow_dispatch]
 jobs:
-  test-code:
+  build-code:
     runs-on: ubuntu-latest
     steps:
       - name: copying the codes
@@ -13,5 +13,11 @@ jobs:
       - name: install dependencies
         run: npm install --frozen-lockfile
 
+      - name: build code
+        run: npm run build
+
+  test-code:
+    runs-on: ubuntu-latest
+    steps:
       - name: run test
         run: npm run test
