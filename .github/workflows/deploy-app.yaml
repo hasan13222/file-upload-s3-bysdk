@@ -9,3 +9,9 @@ jobs:
 
       - name: check code is copied or not
         run: ls -a
+
+      - name: install dependencies
+        run: npm install --frozen-lockfile
+
+      - name: run test
+        run: npm run test
