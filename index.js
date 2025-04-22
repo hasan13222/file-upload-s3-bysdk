@@ -68,7 +68,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 })
 
 app.get('/', (req, res) => {
-    res.send("welcome to s3 file upload project.")
+    res.send("welcome to s3 file upload project !!")
 })
 
 app.listen(port, () => {
