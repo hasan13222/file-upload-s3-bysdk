@@ -69,7 +69,7 @@ jobs:
             . $EC2_USER@$EC2_HOST:~/app/
 
           ssh $EC2_USER@$EC2_HOST "cd ~/app && touch .env"
-          echo "$APP_ENVS" > ~/app/.env
+          ssh $EC2_USER@$EC2_HOST "cd ~/app && echo '$APP_ENVS' > .env"
 
           ssh $EC2_USER@$EC2_HOST "cd ~/app && export PATH=$PATH:/run/user/1000/fnm_multishells/12474_1745056390353/bin && npm install --frozen-lockfile"
 
